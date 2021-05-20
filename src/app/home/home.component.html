@@ -1,8 +1,12 @@
-<span>{{ title }} app is running!</span>
-<p [ngStyle]="{'color': tcolor}">
-    {{a+b}}
-</p>
-<p>
-    Current year is {{today.getFullYear()}}
-</p>
-<button (click)="blueText()">blue</button>
+<div [ngStyle]="{'backgroundColor':sum%2==0?'green':'blue'}">
+    <span>{{ title }} app is running!</span>
+    <p [ngStyle]="{'color': tcolor}">
+        {{sum}}
+    </p>
+    <p>
+        Current year is {{today.getFullYear()}}
+    </p>
+    <button (click)="blueText()">blue</button>
+    <input type="text" [(ngModel)]="a" (keyup)="updateSum()">
+    <input type="text" value="a">
+</div>

@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   title = 'talentelgia-angular';
-  a = 5;
-  b = 6;
+  a: any = 0;
+  b: any = 0;
+  sum = 0;
   tcolor = 'red';
   today = new Date();
 
@@ -17,5 +18,15 @@ export class HomeComponent implements OnInit {
   }
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.a = 5;
+    this.b = 7;
+    this.updateSum();
+    var title = 'some-angular';
+    this.title = 'other-angular';
+  }
+  updateSum() {
+    console.log('keyed up..');
+    this.sum = parseInt(this.a) + parseInt(this.b);
+  }
 }

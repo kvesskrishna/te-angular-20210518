@@ -1,0 +1,11 @@
+<p>
+    <input type="text" [(ngModel)]="usertext">
+</p>
+<div *ngFor='let animal of animals'>
+    <div *ngIf='usertext.toLowerCase()==animal.text.toLowerCase()'>
+        <img width='300px' [src]="animal.src" alt="">
+        <br>
+        <caption>{{animal.text}}</caption>
+    </div>
+</div>
+<p *ngIf="!checkAnimal()">No preview available</p>

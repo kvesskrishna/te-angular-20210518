@@ -1,0 +1,22 @@
+<p appHightlight>conditional-form works!</p>
+<form *ngIf="displayForm" action="">
+    <select (change)="setAge($event)">
+        <option *ngFor="let age of ages" [value]="age">{{age}}</option>
+    </select>
+</form>
+<p appHightlight *ngIf="!displayForm">Too young to access the form!</p>
+
+<select [(ngModel)]="selectedCountry" *ngIf="displayForm">
+    <option *ngFor="let country of countries" [value]="country.country">{{country.country}}</option>
+</select>
+
+<div *ngFor="let country of countries">
+    <img width="100px" [src]="country.flag" *ngIf="selectedCountry==country.country">
+</div>
+<input placeholder="search user" type="text">
+<p *ngFor="let user of maskedusers">{{user.name | lowercase }}<br>{{user.phone | mask:'$':3}}
+    <br>{{user.salary | currency:'INR'}}
+    <br>{{user.doj| date: 'yyyy-MM-dd'}}
+</p>
+
+{{users | json}}

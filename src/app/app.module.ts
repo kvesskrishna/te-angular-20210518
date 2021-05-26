@@ -9,9 +9,12 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { MathsTableComponent } from './maths-table/maths-table.component';
 import { AnimalSelectorComponent } from './animal-selector/animal-selector.component';
+import { ConditionalFormComponent } from './conditional-form/conditional-form.component';
+import { HightlightDirective } from './directives/hightlight.directive';
+import { MaskPipe } from './pipes/mask.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, MathsTableComponent, AnimalSelectorComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, MathsTableComponent, AnimalSelectorComponent, ConditionalFormComponent, HightlightDirective, MaskPipe],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

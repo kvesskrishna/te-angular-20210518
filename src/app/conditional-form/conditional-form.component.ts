@@ -10,6 +10,7 @@ export class ConditionalFormComponent implements OnInit {
   ages: number[] = [];
   countries = [];
   selectedCountry = '';
+  key = '';
   users = [
     { name: 'john', phone: '22222', salary: 2000, doj: new Date(2010, 3, 4) },
     { name: 'TOM', phone: '888', salary: 5000, doj: new Date(2000, 3, 24) },

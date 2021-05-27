@@ -12,9 +12,10 @@ import { AnimalSelectorComponent } from './animal-selector/animal-selector.compo
 import { ConditionalFormComponent } from './conditional-form/conditional-form.component';
 import { HightlightDirective } from './directives/hightlight.directive';
 import { MaskPipe } from './pipes/mask.pipe';
+import { UserSearchPipe } from './pipes/user-search.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, MathsTableComponent, AnimalSelectorComponent, ConditionalFormComponent, HightlightDirective, MaskPipe],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, MathsTableComponent, AnimalSelectorComponent, ConditionalFormComponent, HightlightDirective, MaskPipe, UserSearchPipe],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

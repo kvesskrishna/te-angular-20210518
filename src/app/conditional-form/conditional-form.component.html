@@ -13,10 +13,30 @@
 <div *ngFor="let country of countries">
     <img width="100px" [src]="country.flag" *ngIf="selectedCountry==country.country">
 </div>
-<input placeholder="search user" type="text">
-<p *ngFor="let user of maskedusers">{{user.name | lowercase }}<br>{{user.phone | mask:'$':3}}
+<p *ngFor="let user of maskedusers">{{user.name | uppercase }}<br>{{user.phone | mask:'$':1}}
     <br>{{user.salary | currency:'INR'}}
     <br>{{user.doj| date: 'yyyy-MM-dd'}}
 </p>
 
 {{users | json}}
+
+<input [(ngModel)]="key" class="form-control" placeholder="search user" type="text">
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>DOJ</th>
+            <TH>Salary</TH>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users | userSearch:key">
+            <td>{{user.name}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.doj}}</td>
+            <td>{{user.salary}}</td>
+        </tr>
+    </tbody>
+</table>

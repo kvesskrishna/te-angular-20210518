@@ -15,9 +15,11 @@ import { MaskPipe } from './pipes/mask.pipe';
 import { UserSearchPipe } from './pipes/user-search.pipe';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './parent/child/child.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './products/product/product.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, MathsTableComponent, AnimalSelectorComponent, ConditionalFormComponent, HightlightDirective, MaskPipe, UserSearchPipe, ParentComponent, ChildComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, MathsTableComponent, AnimalSelectorComponent, ConditionalFormComponent, HightlightDirective, MaskPipe, UserSearchPipe, ParentComponent, ChildComponent, ProductsComponent, ProductComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

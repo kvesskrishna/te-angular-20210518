@@ -1,3 +1,5 @@
-<p>parent works! {{data}}</p>
+<p>parent works! {{data}} {{data2}}</p>
 <input type="text" [(ngModel)]="data">
+<input type="text" [(ngModel)]="data2">
 <app-child [pdata]="data" (changeData)="onChildChange($event)"></app-child>
+<app-child [pdata]="data2" (changeData)="onChildChange($event)"></app-child>

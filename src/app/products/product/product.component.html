@@ -1,0 +1,10 @@
+<div class="card text-center">
+    <img width="200px"
+        src="https://png.pngitem.com/pimgs/s/325-3256236_products-icon-vector-product-icon-png-transparent-png.png">
+    <h3>{{pdetail.title}}</h3>
+    <p>{{pdetail.price | currency:'INR'}}</p>
+    <p>{{pdetail.description}}</p>
+    <P>Quantity: {{pdetail.quantity}}</P>
+    <button (click)="updateQuantity('add',pdetail.id)">+</button>
+    <button (click)="updateQuantity('rem',pdetail.id)">-</button>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 h3">
+            Items in cart: {{cartproducts.length}}
+            <br>
+            Cart Total: {{cartvalue | currency:'INR'}}
+        </div>
+    </div>
+    <div class="row">
+        <div *ngFor="let product of products" class="col-3 ">
+            <app-product [pdetail]='product' (changeQuantity)="editProduct($event)"></app-product>
+        </div>
+    </div>
+</div>

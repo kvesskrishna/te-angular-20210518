@@ -9,6 +9,7 @@ export class ParentComponent implements OnInit {
   constructor() {}
 
   data = 'parent data';
+  data2 = 'parent data2';
   ngOnInit(): void {}
   onChildChange(e) {
     console.log(e);

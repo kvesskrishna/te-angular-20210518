@@ -5,6 +5,7 @@
     <p>{{pdetail.price | currency:'INR'}}</p>
     <p>{{pdetail.description}}</p>
     <P>Quantity: {{pdetail.quantity}}</P>
+    <button [routerLink]="['/product-info', pdetail.id]" class="btn btn-success">View Product</button>
     <button (click)="updateQuantity('add',pdetail.id)">+</button>
     <button (click)="updateQuantity('rem',pdetail.id)">-</button>
 </div>

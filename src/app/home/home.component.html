@@ -1,4 +1,9 @@
 <div [ngStyle]="{'backgroundColor':sum%2==0?'green':'blue'}">
+    <input type="text" [(ngModel)]="username"><br>
+    Typing {{username}}...
+    <br>
+    <button (click)="setUser()">Submit</button>
+    <br>
     <span>{{ title }} app is running!</span>
     <p [ngStyle]="{'color': tcolor}">
         {{sum}}

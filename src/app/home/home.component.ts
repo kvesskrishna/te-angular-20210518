@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NameServiceService } from '../services/name-service.service';
 
 @Component({
   selector: 'app-home',
@@ -12,11 +13,12 @@ export class HomeComponent implements OnInit {
   sum = 0;
   tcolor = 'red';
   today = new Date();
+  username = '';
 
   blueText() {
     this.tcolor = 'blue';
   }
-  constructor() {}
+  constructor(private names: NameServiceService) {}
 
   ngOnInit(): void {
     this.a = 5;
@@ -28,5 +30,9 @@ export class HomeComponent implements OnInit {
   updateSum() {
     console.log('keyed up..');
     this.sum = parseInt(this.a) + parseInt(this.b);
+  }
+  setUser() {
+    this.names.setName(this.username);
+    alert('User name is set!');
   }
 }

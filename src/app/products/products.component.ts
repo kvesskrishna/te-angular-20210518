@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NameServiceService } from '../services/name-service.service';
 import { products } from './products';
 @Component({
   selector: 'app-products',
@@ -6,12 +7,15 @@ import { products } from './products';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  constructor() {}
+  constructor(private names: NameServiceService) {}
   products = products;
   cartitems = 0;
   cartvalue = 0;
   cartproducts = [];
-  ngOnInit(): void {}
+  user = '';
+  ngOnInit(): void {
+    this.user = this.names.uname;
+  }
 
   editProduct(e) {
     this.cartvalue = 0;

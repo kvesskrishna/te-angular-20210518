@@ -3,3 +3,7 @@ div {
   background: black;
   color: white;
 }
+.active {
+  color: yellow;
+  font-weight: bold;
+}

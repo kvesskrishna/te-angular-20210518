@@ -1,0 +1,22 @@
+<div class="col-8">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone}}</td>
+                <td>
+                    <button [routerLink]="['/user', user.id]">Info</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

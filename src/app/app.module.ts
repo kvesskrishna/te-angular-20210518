@@ -18,10 +18,30 @@ import { ChildComponent } from './parent/child/child.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './products/product/product.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
-
+import { UsersComponent } from './users/users.component';
+import { UserComponent } from './users/user/user.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, MathsTableComponent, AnimalSelectorComponent, ConditionalFormComponent, HightlightDirective, MaskPipe, UserSearchPipe, ParentComponent, ChildComponent, ProductsComponent, ProductComponent, ProductInfoComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    MathsTableComponent,
+    AnimalSelectorComponent,
+    ConditionalFormComponent,
+    HightlightDirective,
+    MaskPipe,
+    UserSearchPipe,
+    ParentComponent,
+    ChildComponent,
+    ProductsComponent,
+    ProductComponent,
+    ProductInfoComponent,
+    UsersComponent,
+    UserComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

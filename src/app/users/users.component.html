@@ -19,4 +19,29 @@
             </tr>
         </tbody>
     </table>
+    <br>
+    <button (click)="displayForm()">Add User</button>
+    <div *ngIf='showForm' class="container">
+        <!-- template driven form -->
+        <form #newUserForm = 'ngForm' (ngSubmit)="submitHandler(newUserForm)">
+            <label for="">ID</label>  
+            <input class="form-control" type="text" id="id" ngModel #id='ngModel' name="id" required minlength="2">
+            <div class="alert alert-danger" *ngIf="id.invalid&&(id.touched||id.dirty)">
+                <div *ngIf="id.errors?.required">Please enter ID</div>
+                <div *ngIf="id.errors?.minlength">ID should be at least 2 characters</div>
+            </div>
+            <br>
+            <label for="">nName</label>  <input  type="text" name="name" ngModel #name='ngModel' required minlength="3">
+            <div class="alert alert-danger" *ngIf="name.invalid&&(name.touched||name.dirty)">
+                <div *ngIf="name.errors?.required">Please enter name</div>
+                <div *ngIf="name.errors?.minlength">name should be at least 3 characters</div>
+            </div>
+            <br>
+            <label for="">email</label>  <input type="text" name="email" ngModel>
+            <br>
+            <label for="">phone</label>  <input type="text" name="phone" ngModel>
+            <br>
+<input type="submit" [disabled]="name.invalid||id.invalid">
+        </form>
+    </div>
 </div>

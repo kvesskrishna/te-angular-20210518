@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MathsTableComponent } from './maths-table/maths-table.component';
 import { AnimalSelectorComponent } from './animal-selector/animal-selector.component';
 import { ConditionalFormComponent } from './conditional-form/conditional-form.component';
@@ -21,6 +21,8 @@ import { ProductInfoComponent } from './product-info/product-info.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CountryFormComponent } from './country-form/country-form.component';
+import { PostsComponent } from './posts/posts.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,8 +42,10 @@ import { HttpClientModule } from '@angular/common/http';
     ProductInfoComponent,
     UsersComponent,
     UserComponent,
+    CountryFormComponent,
+    PostsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

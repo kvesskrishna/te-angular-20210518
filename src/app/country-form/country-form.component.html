@@ -1,0 +1,22 @@
+<div class="container">
+
+    <form #countryForm = 'ngForm' (ngSubmit)='submitHandler(countryForm)'>
+        <label for="">Country</label>
+        <select [(ngModel)]="defaultCountry" name="country" id="" #country = 'ngModel' ngModel class="form-control" (change)="changeStates()">
+            <option [value]="0" >Select Country</option>
+            <option *ngFor='let country of countries' [value]="country.id">{{country.name}}</option>
+        </select>
+        <div *ngIf="!defaultCountry" class="alert alert-danger">
+            Please select a valid country
+        </div>
+        <br>
+        <label for="">State</label>
+        <select name="state" id="" #state = 'ngModel' ngModel class="form-control" [(ngModel)]="defaultState">
+            <option *ngFor='let state of states' [value]="state">{{state}}</option>
+        </select>
+        <!-- <div class="alert alert-danger">
+            Please select a valid state
+        </div> -->
+        <button [disabled]="!defaultCountry" type="submit">Submit</button>
+    </form>
+</div>  

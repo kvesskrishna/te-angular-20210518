@@ -22,4 +22,7 @@ export class UsersService {
 
     // return filtered;
   }
+  postUser(formdata) {
+  return this._http.post('https://jsonplaceholder', formdata);
+  }
 }

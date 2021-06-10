@@ -7,7 +7,8 @@ import { ProductInfoComponent } from './product-info/product-info.component';
 import { ProductsComponent } from './products/products.component';
 import { UserComponent } from './users/user/user.component';
 import { UsersComponent } from './users/users.component';
-
+import { HomeComponent as AdminHomeComponent } from './admin/home/home.component';
+import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -16,7 +17,18 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'countries', component: CountryFormComponent },
   { path: 'posts', component: PostsComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'user/:id', component: UserComponent },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
+    path: 'visitor',
+    loadChildren: () =>
+      import('./visitor/visitor.module').then((m) => m.VisitorModule),
+  },
 ];
 
 @NgModule({

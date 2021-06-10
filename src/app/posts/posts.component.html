@@ -7,8 +7,12 @@
             <p *ngIf="form['postid'].errors.minlength">ID should be 2 digits minimum</p>
         </div> 
         <label for="">Country</label>
-        <select formControlName="country">
+        <select formControlName="country" (change)='changeStates()'>
             <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
+        </select><br>   
+         <label for="">State</label>
+        <select formControlName="state">
+            <option *ngFor="let state of states" [value]="state" >{{state}}</option>
         </select><br>   
             <label for="">
                 <input type="radio" formControlName='category' value='science'>
@@ -22,6 +26,27 @@
         <input type="text" formControlName="title"><br>   
         <label for="">Content</label>
         <input type="text" formControlName="content"><br>   
+        <label for="">dob</label>
+        <input type="date" formControlName="dob"><br>   
+        <label for="">Password</label>
+        <input type="text" formControlName="password"><br>  
+        <div class="alert alert-danger" *ngIf="form['password'].errors">
+            <div *ngIf="form['password'].errors?.required">
+                Password is required
+            </div>
+            <div *ngIf="form['password'].errors?.minlength">
+                Password should be atleast 8 characters
+            </div>
+            <div *ngIf="form['password'].errors?.passwordStrength?.hasUpperCase">
+                Password should contain atleast one uppercase character
+            </div>
+            <div *ngIf="form['password'].errors?.passwordStrength?.hasLowerCase">
+                Password should contain atleast one lowercase character
+            </div>
+            <div *ngIf="form['password'].errors?.passwordStrength?.hasNumeric">
+                Password should contain atleast one number
+            </div>
+        </div> 
        <br>
        <button type="submit">Submit</button>
     </form>

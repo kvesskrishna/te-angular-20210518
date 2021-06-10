@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <form #loginForm="ngForm" (ngSubmit)="submitHandler(loginForm)">
+        <label for="">Username</label>
+        <input type="text" name="username" ngModel #uname="ngModel" />
+        <br />
+        <label for="">Password</label>
+        <input type="password" name="password" ngModel #pwd="ngModel" />
+        <br />
+        <button type="submit">Login</button>
+      </form>
+      <div class="alert alert-danger" *ngIf="loginError">{{ loginError }}</div>
+    </div>
+  </div>
+</div>

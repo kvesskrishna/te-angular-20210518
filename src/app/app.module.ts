@@ -23,6 +23,7 @@ import { UserComponent } from './users/user/user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CountryFormComponent } from './country-form/country-form.component';
 import { PostsComponent } from './posts/posts.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { PostsComponent } from './posts/posts.component';
     UserComponent,
     CountryFormComponent,
     PostsComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
